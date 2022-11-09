@@ -1,0 +1,82 @@
+.pagination {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 700;
+    list-style: none;
+    user-select: none;
+}
+.pagination .page-item {
+    min-width: 25px;
+    min-height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2px;
+    transition: all 0.3s;
+}
+.pagination .page-item:hover {
+    color: #ff3838;
+    background: #f4f4f4;
+}
+.pagination .page-item.active {
+    padding: 0;
+    color: #fff;
+    background: black;
+}
+.pagination .page-item.arrow-icon {
+    position: relative;
+    z-index: 1;
+    font-size: 35px;
+    transform: translateY(-2px);
+    transition: all 0.3s;
+}
+.pagination .page-item.arrow-icon:after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    z-index: -1;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.pagination .page-item.arrow-icon:hover {
+    color: #ff3838;
+    background: transparent;
+}
+.pagination .page-item.arrow-icon:hover:after {
+    background: #f4f4f4;
+}
+.pagination .page-item.arrow-icon.disabled {
+    cursor: not-allowed;
+    color: rgba(155, 155, 155, 0.3);
+}
+.pagination .page-item.arrow-icon.disabled:hover {
+    background: transparent;
+}
+body .card {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background: #fff;
+}
+.fa-instagram {
+    position: absolute;
+    top: 3%;
+    right: 2%;
+    color: #fff;
+    font-size: 38px;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+.fa-instagram:hover {
+    color: #ff3838;
+    font-size: 42px;
+}
+

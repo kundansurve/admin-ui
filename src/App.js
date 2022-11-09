@@ -1,23 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import DisplayList from './components/displayList';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [data,setData]=useState(null);
+
+  useEffect(()=>{
+    fetch('https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json')
+    .then(response=>response.json())
+    .then((Data)=>{
+      
+      setData(Data);
+    }).catch(error=>{
+      console.group(error);
+    })
+  },[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" >
+      <div style={{width:"80%",margin:"auto"}}>
+        <DisplayList data={data}/>
+      </div>
     </div>
   );
 }
